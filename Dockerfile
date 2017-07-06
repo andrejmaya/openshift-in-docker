@@ -21,5 +21,4 @@ RUN apk update && apk add curl ca-certificates && \
 RUN curl -L https://github.com/openshift/origin/releases/download/${OC_VERSION}/openshift-origin-client-tools-${OC_VERSION}-${OC_HASH}-linux-64bit.tar.gz \
       | tar xz && install /openshift-origin-client-tools-${OC_VERSION}-${OC_HASH}-linux-64bit/oc /usr/bin/oc && rm -rf openshift*
 
-#start dind with insecure registry flag
 CMD ["--insecure-registry", "172.30.0.0/16"]
